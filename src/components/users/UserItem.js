@@ -1,23 +1,19 @@
-import React, { Component } from "react";
-import UserItem from "./UserItem";
+import React from "react";
+import PropTypes from 'prop-types'
 
-class Users extends Component {
-  state = {
-    id: "id",
-    login: "mojombo",
-    avatar_url: "https://avatars0.githubusercontent.com/u/1?v=4",
-    html_url: "https://github.com/mojombo",
-  };
 
-  render() {
-    const { login, avatar_url, html_url } = this.state;
+const UserItem = ({user: {login, avatar_url, html_url}}) =>{
+
+
+ 
+    
     return (
       <div className="card text-center">
         <img
           src={avatar_url}
           alt=""
           className="round-img"
-          style={{ width: "400px" }}
+          style={{ width: "150px" }}
         />
         <h3>{login}</h3>
 
@@ -29,12 +25,8 @@ class Users extends Component {
       </div>
     );
   }
-}
 
-const userStyle = {
-  display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gridGap: "1rem",
-};
 
-export default Users;
+
+
+export default UserItem;
